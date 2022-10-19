@@ -1,0 +1,16 @@
+syntax = "proto3";
+package classifier;
+
+option go_package = "github.com/Ilyagu/classifier";
+
+service RecognizeApiService {
+  rpc recognizePhoto(recognizePhotoRequest) returns (recognizePhotoResponse) {}
+}
+
+message recognizePhotoRequest {
+     bytes image = 1;
+}
+
+message recognizePhotoResponse {
+    string category = 1;
+}
