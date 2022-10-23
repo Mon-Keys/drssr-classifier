@@ -66,7 +66,7 @@ class RecognizeApiService(pb_grpc.RecognizeApiService):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     pb_grpc.add_RecognizeApiServiceServicer_to_server(RecognizeApiService(), server)
-    server.add_insecure_port('[::]:8082')
+    server.add_insecure_port('[::]:5002')
     server.start()
     server.wait_for_termination()
 
